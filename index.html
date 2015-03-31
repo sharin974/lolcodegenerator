@@ -1,0 +1,256 @@
+<!DOCTYPE HTML>
+<!--
+	Prologue 1.2 by HTML5 UP
+	html5up.net | @n33co
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Générateur code tournoi 1.00</title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		<script src="js/jquery.min.js"></script>
+		<script src="js/skel.min.js"></script>
+		<script src="js/skel-panels.min.js"></script>
+		<script src="js/init.js"></script>
+		<script src="js/base64.js"></script>
+		
+			
+	
+		<noscript>
+			<link rel="stylesheet" href="css/skel-noscript.css" />
+			<link rel="stylesheet" href="css/style.css" />
+			<link rel="stylesheet" href="css/style-wide.css" />
+		</noscript>
+		<!--[if lte IE 9]><link rel="stylesheet" href="css/ie9.css" /><![endif]-->
+		<!--[if lte IE 8]><link rel="stylesheet" href="css/ie8.css" /><![endif]-->
+	</head>
+	<body>
+
+		<!-- Header -->
+			<div id="header" class="skel-panels-fixed">
+
+				<div class="top">
+
+					<!-- Logo -->
+						<div id="logo">
+
+						</div>
+
+					<!-- Nav -->
+						<nav id="nav">
+							<!--
+							
+								Prologue's nav expects links in one of two formats:
+								
+								1. Hash link (scrolls to a different section within the page)
+								
+								   <li><a href="#foobar" id="foobar-link" class="skel-panels-ignoreHref"><span class="fa fa-whatever-icon-you-want">Foobar</span></a></li>
+
+								2. Standard link (sends the user to another page/site)
+
+								   <li><a href="http://foobar.tld"><span class="fa fa-whatever-icon-you-want">Foobar</span></a></li>
+							
+							-->
+							<ul>
+								<li><a href="#top" id="top-link" class="skel-panels-ignoreHref"><span class="fa fa-home">Intro</span></a></li>
+							</ul>
+						</nav>
+						
+				</div>
+				
+				<div class="bottom">
+
+					<!-- Social Icons -->
+						<ul class="icons">
+							<li><a href="#" class="fa fa-twitter solo"><span>Twitter</span></a></li>
+							<li><a href="#" class="fa fa-facebook solo"><span>Facebook</span></a></li>
+							<li><a href="#" class="fa fa-github solo"><span>Github</span></a></li>
+							<li><a href="#" class="fa fa-dribbble solo"><span>Dribbble</span></a></li>
+							<li><a href="#" class="fa fa-envelope solo"><span>Email</span></a></li>
+						</ul>
+				
+				</div>
+			
+			</div>
+
+		<!-- Main -->
+			<div id="main">
+			
+				<!-- Intro -->
+					<section id="top" class="one">
+						<div class="container">
+
+							<img src="images/pic01.jpg" alt="" />
+
+					
+							<table><tr><td>
+							Map
+						<select id="vmap" name="vmap"onchange="maps()">
+						<option> Faille de l'invocateur
+						<option> Forêt Torturée
+						<option> Brèche de cristal
+						<option> Abîme hurlant
+						</select>
+						<script type="text/javascript">
+															
+										function maps(){
+									
+											switch (document.getElementById('vmap').value){
+
+												case "Faille de l'invocateur":
+													document.getElementById("idmap").value= "map11";
+												break;
+												case "Forêt Torturée":
+													document.getElementById("idmap").value= "map10";
+												break;
+												case "Brèche de cristal":
+													document.getElementById("idmap").value= "map8";
+												break;
+												case "Abîme hurlant":
+													document.getElementById("idmap").value= "map12";
+												break;
+
+													}
+											}
+											
+											
+										</script>
+						<input type="hidden" id="idmap" value="map11"/>
+						</td>
+						<td>Type de partie
+						<select id="gtype" name="gtype" onchange="gtypes()">
+						<option> mode aveugle
+						<option> mode draft
+						<option> aléatoire
+						<option selected> Tournois
+						</select>
+						<script type="text/javascript">
+															
+										function gtypes(){
+
+											switch (document.getElementById('gtype').value){
+
+												case "mode aveugle":
+													document.getElementById("idtype").value= "pick1";
+												break;
+												case "mode draft":
+													document.getElementById("idtype").value= "pick2 ";
+												break;
+												case "aléatoire":
+													document.getElementById("idtype").value= "pick4";
+												break;
+												case "Tournois":
+													document.getElementById("idtype").value= "pick6";
+												break;
+
+													}
+											}
+											
+											
+										</script>
+						<input type="hidden" id="idtype" value="pick6"/>
+						</td></tr><tr>
+						<td>Nombres de joueurs
+						<select id="nbjoueur" name="nbjoueur" onchange="nplayers()">
+						<option> 1
+						<option> 2
+						<option> 3
+						<option selected> 5
+						</select>
+						<script type="text/javascript">
+															
+										function nplayers(){
+
+											switch (document.getElementById('nbjoueur').value){
+
+												case "1":
+													document.getElementById("nbplayer").value= "team1";
+												break;
+												case "2":
+													document.getElementById("nbplayer").value= "team2 ";
+												break;
+												case "3":
+													document.getElementById("nbplayer").value= "team3";
+												break;
+												case "5":
+													document.getElementById("nbplayer").value= "team5";
+												break;
+
+													}
+											}
+											
+											
+										</script>
+					<input type="hidden" id="nbplayer" value="team5"/>
+										
+						</td><td>
+						Spectateur
+						<select id="spec" name="spec" onchange="Tspec()">
+						<option> Tous
+						<option selected> Salon uniquement
+						<option> Aucun
+						</select>
+						<script type="text/javascript">
+															
+										function Tspec(){
+
+											switch (document.getElementById('spec').value){
+
+												case "Tous":
+													document.getElementById("idspec").value= "specALL";
+												break;
+												case "Aucun":
+													document.getElementById("idspec").value= "specNONE";
+												break;
+												case "Salon uniquement":
+													document.getElementById("idspec").value= "specLOBBYONLY";
+												break;
+
+													}
+											}
+											
+											
+										</script>
+						
+						<input type="hidden" id="idspec" value="specALL"/>
+						</td>
+						</tr>
+						</table>
+						<p>
+							Equipe 1 <input type="text" id="team1" onchange="riotcode()"/>
+VS 
+
+						<input type="text" id="team2" onchange="riotcode()"/>	Equipe 2 
+
+									
+										</p>
+										<p>
+password (pas obligatoire)</br><input type="text" id="pwd" onchange="riotcode()"/></p><p>
+<script type="text/javascript">
+										function riotcode(){
+										var t1=document.getElementById('team1').value;
+										var t2=document.getElementById('team2').value;
+										var passwd=document.getElementById('pwd').value;
+										if (passwd==""){
+										document.getElementById("input").value= '{"name":"'+t1+' vs '+t2+'","extra":"'+t1+'vs'+t2+'","password":"'+t1+t2+'974","report":"http:\/\/voip.kazagamers.re\/forum\/riotgames\/rapport\/rapport.php"}';
+										;}else{
+											document.getElementById("input").value= '{"name":"'+t1+' vs '+t2+'","extra":"'+t1+'vs'+t2+'","password":"'+passwd+'","report":"http:\/\/voip.kazagamers.re\/forum\/riotgames\/rapport\/rapport.php"}';
+										}}</script>
+										<input type="hidden" id="input" style="width:700px " />
+						
+<button id="encode">creer code tournoi</button>
+<p>
+
+Voici votre code </br>(selectionner tout et copier le pour le diffuser)</br> <input type="text" id="output" style="width:1200px"/>
+</p>
+
+							</p>
+						</div>
+					</section>
+					
+
+
+	</body>
+</html>
